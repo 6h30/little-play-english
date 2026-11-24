@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Little Play English</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="English for children aged 1 to 5: first words, colours, sentences, sounds and letters. A short daily adventure and a mission to try together in real life.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Little Play English">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#ffe9a8">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Home: today's adventure, or the map of worlds -->
+  <section id="menu" class="screen">
+    <button id="menuBack" class="round-btn hidden" aria-label="Back">◀&#xFE0E;</button>
+    <div id="menuTitle" class="menu-title">Little Play English</div>
+    <div id="levelbar" class="levelbar hidden"></div>
+    <div id="gridwrap"><div id="grid"></div></div>
+    <button id="gear" class="gate" aria-label="For parents (hold for 2 seconds)">⚙️<i class="fill"></i></button>
+    <button id="mbadge" class="gate hidden" aria-label="A mission is waiting for a grown-up (hold for 2 seconds)">👪<i class="fill"></i></button>
+  </section>
+
+  <!-- An activity -->
+  <section id="stage" class="screen hidden">
+    <div id="game"></div>
+    <button id="home" aria-label="Back">🏠</button>
+    <button id="tipBtn" class="hidden" aria-label="Play together: tips for grown-ups">👪</button>
+    <div id="steps" class="steps"></div>
+  </section>
+
+  <!-- "Play together" card for grown-ups -->
+  <div id="tip" class="hidden"><div class="tip-card">
+    <div class="tip-title" id="tipTitle">👪 Play together</div>
+    <p id="tipEn" class="tip-en"></p>
+    <p id="tipVi" class="tip-vi"></p>
+    <button id="tipClose" class="btn">OK</button>
+  </div></div>
+
+  <!-- Shown only while the screen is locked (Android screen pinning): hold 3 seconds to unlock -->
+  <button id="unlock" class="gate hidden" aria-label="Unlock the screen (hold for 3 seconds)">🔒<i class="fill"></i></button>
+
+  <!-- Play time is over -->
+  <div id="bye" class="hidden">
+    <div class="moon">🌙</div>
+    <div class="bye-text">All done playing!<br>See you next time.</div>
+    <button id="byeResume" class="gate small">Parents: keep playing (hold for 2 seconds)<i class="fill"></i></button>
+  </div>
+
+  <!-- Parent area (filled in by shell.js) -->
+  <div id="panel" class="hidden"><div class="sheet" id="sheet"></div></div>
+
+  <!-- Grown-ups check: a number written in words that a small child cannot type -->
+  <div id="adult" class="hidden"><div class="adult-card">
+    <div class="adult-title">Grown-ups only</div>
+    <div class="adult-q">Type this number: <b id="adultWord"></b></div>
+    <div id="adultDisp" class="adult-disp">– –</div>
+    <div class="keypad">
+      <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button>
+      <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button>
+      <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button>
+      <button data-k="x" class="alt" aria-label="Cancel">✕</button><button data-k="0">0</button><button data-k="b" class="alt" aria-label="Delete">⌫</button>
+    </div>
+  </div></div>
+
+  <canvas id="fx"></canvas>
+</div>
+
+<script src="core.js"></script>
+<script src="data.js"></script>
+<script src="engine.js"></script>
+<script src="activities.js"></script>
+<script src="shell.js"></script>
+</body>
+</html>

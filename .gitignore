@@ -1,0 +1,9 @@
+# internal notes and tools, not part of the published site
+NOTES.md
+DESIGN.md
+tools/
+dist/
+_serve.js
+PLAY.bat
+CHOI-THU.txt
+*.log
